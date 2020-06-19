@@ -1,0 +1,12 @@
+salad_bar
+12000
+banana
+1500
+drink
+2000
+chicken
+12000
+apple
+1200
+bond
+3000
