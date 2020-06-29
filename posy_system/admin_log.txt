@@ -1,28 +1,47 @@
 (init)시스템 가동 및 초기화 완료
-(order)0번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(order)0번 고객이 chicken를 주문하였습니다.(첫주문)
-(order)0번 고객이 drink를 주문하였습니다.(첫주문)
-(order)0번 고객이 banana를 주문하였습니다.(첫주문)
-(order)4번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(calculate)고객에게 30000원을 받고 2500원을 거슬러주었습니다.
-(more_order)4번 고객이 salad_bar를 주문하였습니다.
-(calculate)고객에게 50000원을 받고 26000원을 거슬러주었습니다.
-(order)0번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(calculate)고객에게 30000원을 받고 18000원을 거슬러주었습니다.
+(order)5번 고객이 salad_bar를 주문하였습니다.(첫주문)
+(order)5번 고객이 drink를 주문하였습니다.(첫주문)
+(order)5번 고객이 bond를 주문하였습니다.(첫주문)
+(calculate)고객에게 20000원을 받고 3000원을 거슬러주었습니다.
 (init)시스템 가동 및 초기화 완료
-(order)0번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(calculate)고객에게 30000원을 받고 18000원을 거슬러주었습니다.
-(total_sale)총 매출 : 12000원
-(init)시스템 가동 및 초기화 완료
-(order)0번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(order)0번 고객이 drink를 주문하였습니다.(첫주문)
-(calculate)고객에게 20000원을 받고 6000원을 거슬러주었습니다.
-(total_sale)총 매출 : 14000원
 (order)1번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(order)0번 고객이 salad_bar를 주문하였습니다.(첫주문)
-(order)0번 고객이 drink를 주문하였습니다.(첫주문)
-(calculate)고객에게 20000원을 받고 8000원을 거슬러주었습니다.
-(calculate)고객에게 30000원을 받고 16000원을 거슬러주었습니다.
-(total_sale)총 매출 : 40000원
-(add_menu)bond를 메뉴에 추가하셨습니다.
- 
+(order)1번 고객이 drink를 주문하였습니다.(첫주문)
+(order)2번 고객이 salad_bar를 주문하였습니다.(첫주문)
+(order)2번 고객이 chicken를 주문하였습니다.(첫주문)
+(order)2번 고객이 apple를 주문하였습니다.(첫주문)
+(init)시스템 가동 및 초기화 완료
+(order)1번 고객이 salad_bar를 주문하였습니다.(첫주문)
+(order)1번 고객이 chicken를 주문하였습니다.(첫주문)
+(order)1번 고객이 drink를 주문하였습니다.(첫주문)
+(order)2번 고객이 salad_bar를 주문하였습니다.(첫주문)
+(order)2번 고객이 drink를 주문하였습니다.(첫주문)
+(order)2번 고객이 bond를 주문하였습니다.(첫주문)
+(order)2번 고객이 apple를 주문하였습니다.(첫주문)
+(calculate)고객에게 30000원을 받고 4000원을 거슬러주었습니다.
+(calculate)고객에게 300000원을 받고 281800원을 거슬러주었습니다.
+(init)시스템 가동 및 초기화 완료
+(add_menu)hope를 메뉴에 추가하셨습니다.
+ (init)시스템 가동 및 초기화 완료
+(sub_menu)hope를 메뉴에서 제거하셨습니다.
+ (init)시스템 가동 및 초기화 완료
+(order)1번 고객이 banana를 주문하였습니다.(첫주문)
+(order)1번 고객이 salad_bar를 주문하였습니다.(첫주문)
+(order)1번 고객이 banana를 주문하였습니다.(첫주문)
+(order)1번 고객이 drink를 주문하였습니다.(첫주문)
+(calculate)고객에게 30000원을 받고 13000원을 거슬러주었습니다.
+(init)시스템 가동 및 초기화 완료
+(order)1번 고객이 banana를 주문하였습니다.
+(order)1번 고객이 drink를 주문하였습니다.
+(order)1번 고객이 salad_bar를 주문하였습니다.
+(order)2번 고객이 banana를 주문하였습니다.
+(order)2번 고객이 drink를 주문하였습니다.
+(order)2번 고객이 salad_bar를 주문하였습니다.
+(order)2번 고객이 chicken를 주문하였습니다.
+(order)3번 고객이 banana를 주문하였습니다.
+(order)3번 고객이 drink를 주문하였습니다.
+(calculate)고객에게 30000원을 받고 14500원을 거슬러주었습니다.
+(calculate)고객에게 20000원을 받고 -7500원을 거슬러주었습니다.
+(calculate)고객에게 30000원을 받고 2500원을 거슬러주었습니다.
+(calculate)고객에게 40000원을 받고 36500원을 거슬러주었습니다.
+(total_sale)총 매출 : 74000원
+시스템이 종료되었습니다.

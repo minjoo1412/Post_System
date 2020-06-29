@@ -54,21 +54,21 @@ public class Post_main {
         String total_sale_log = "";
         while(true){
         	//몇번 손님인지 확인해야함 
-	        System.out.println("메뉴선택\norder   more_order   calculate   add_menu   sub_menu   total_sale   menu_find   exit");
+	        System.out.println("메뉴선택\norder   calculate   add_menu   sub_menu   total_sale   menu_find   exit");
 	        hm = sc.nextLine();
+	        System.out.println();
 	        if(hm.equals("order")){
 	        	System.out.println("몇번손님(0~9)");
 	        	num = sc.nextInt();
 	        	sc.nextLine();
-	        	people[num] = new Customer();
-	        	people[num].set_table(num);
-	        	Sale.order(people[num], menu);
-	        	people[num].countdown();//order은 첫 주문이므로 첫 주문과 동시에 카운트다운이 이뤄져야
-	        }else if(hm.equals("more_order")){
-	        	System.out.println("몇번손님(0~9)");
-	        	num = sc.nextInt();
-	        	sc.nextLine();
-	        	Sale.more_order(people[num], menu);
+	        	if(people[num].get_sales() == 0){//고객의 sales가 0일경우 첫 주문으로 판단하여 새 객체 생성 및 카운트다운 시작
+		        	people[num] = new Customer();
+		        	people[num].set_table(num);
+		        	Sale.order(people[num], menu);
+		        	people[num].countdown();//order은 첫 주문이므로 첫 주문과 동시에 카운트다운이 이뤄져야
+	        	}else{
+	        		Sale.order(people[num], menu);
+	        	}
 	        }else if(hm.equals("calculate")){
 	        	System.out.println("몇번손님(0~9)");
 	        	num = sc.nextInt();
@@ -84,7 +84,7 @@ public class Post_main {
 	        }else if(hm.equals("sub_menu")){
 	        	menu_access.sub_menu(menu);
 	        }else if(hm.equals("menu_find")){
-	        	menu_access.menu_find();
+	        	menu_access.menu_find(menu);
 	        }else if(hm.equals("total_sale")){
 	        	System.out.println("총 매출 : " + Sale.total_sales + "원");
 	        	total_sale_log = "(total_sale)총 매출 : " + Sale.total_sales + "원\n";
@@ -193,7 +193,7 @@ class Sale {
         	}else{
         		System_access.output(menu, order_menu);
         		people.set_sales(people.get_sales() + menu.get(order_menu));
-        		order_log = "(order)"+people.get_table() + "번 고객이 " + order_menu + "를 주문하였습니다.(첫주문)\n";
+        		order_log = "(order)"+people.get_table() + "번 고객이 " + order_menu + "를 주문하였습니다.\n";
         		System_access.admin_log(order_log);
         	}
         }
@@ -207,27 +207,7 @@ class Sale {
 	}
 	//처음주문 후 시간 흘러가야함
 */
-	public static void more_order(Customer people, Map<String, Integer> menu){
-		String more_order_log = "";
-		System.out.println("추가주문 입니다.");
-		while(true){
-        	System.out.println("무엇을 주문하시겠습니까");
-        	order_menu = sc.nextLine();
-        
-        	if(order_menu.equals("exit")){
-        		break;
-        	}else if(menu.containsKey(order_menu) == false){
-        		System.out.println("없는 메뉴입니다 다시 시도하십시오");
-        		continue;
-        	}else{
-        		System_access.output(menu, order_menu);
-        		people.set_sales(people.get_sales() + menu.get(order_menu));
-        		more_order_log = "(more_order)"+people.get_table() + "번 고객이 " + order_menu + "를 주문하였습니다.\n";
-        		System_access.admin_log(more_order_log);
-        	}
-        }
-		System.out.println("총 금액 : " + people.get_sales()+"원\n");//sales를 고객 객체마다 1개씩
-	}
+	
 	
 	public static void calculate(Customer people, int money){
 		if(people.get_sales() > money){
@@ -321,27 +301,12 @@ class menu_access{
 	}
 	//메뉴제거
 	
-	public static void menu_find(){
-		int count = 0;
-		try{
-            File file = new File("./menu.txt");
-            FileReader filereader = new FileReader(file);
-            BufferedReader bufReader = new BufferedReader(filereader);
-            String line = "";
-            while((line = bufReader.readLine()) != null){
-                if(count %2 == 0){
-                	System.out.print(line + " : ");
-                }else{
-                	System.out.println(line);
-                }
-            	++count;
-            }            
-            bufReader.close();
-        }catch (FileNotFoundException e) {
-            // TODO: handle exception
-        }catch(IOException e){
-            System.out.println(e);
+	public static void menu_find(Map<String, Integer> menu){
+		for(String key : menu.keySet()){ 
+            Integer value = menu.get(key);
+            System.out.println(key+" : "+value);
         }
+		System.out.println();
 	}
 }
 

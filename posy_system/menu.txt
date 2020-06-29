@@ -10,3 +10,5 @@ apple
 1200
 bond
 3000
+hope
+50000
